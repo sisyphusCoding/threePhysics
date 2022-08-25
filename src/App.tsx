@@ -13,6 +13,8 @@ const App = () => {
 
   return (
     <Canvas shadows camera={{ position: [-50, -25, 150], fov: 15 }} >
+      <Suspense fallback={null}>
+
       <hemisphereLight intensity={.7} />
       <spotLight angle={0.45} penumbra={1}
         position={[20, 30, 2.5]} castShadow
@@ -51,6 +53,8 @@ const App = () => {
         </group>
       </Physics>
       <OrbitControls />
+
+      </Suspense>
     </Canvas>
   )
 }
